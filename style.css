@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Page Styles */
+.page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column; /* Arrange content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    position: absolute; /* Stack all pages on top of each other */
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center; /* Center text on all pages */
+}
+
+/* Default active page (Page 1) */
+#page1 {
+    background-color: black;
+    color: white;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+#page2, #page3, #page4, #page5, #page6, #page7 {
+    background-color: #ffc0cb; /* Light pink */
+    color: black;
+}
+
+/* Active Page */
+.page.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+/* Button Styles */
+.btn {
+    margin: 20px 0; /* Add spacing between buttons and other elements */
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #008080; /* Teal color */
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    z-index: 2;
+    font-weight: bold; /* Make the text bold */
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* Text Styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px; /* Add spacing below the heading */
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 80%; /* Limit text width for better readability */
+    margin: 10px auto; /* Center the paragraph */
+}
+
+/* Dim Lights */
+.dim-lights {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.1), rgba(0, 0, 0, 1));
+    animation: fadeIn 2s ease-in;
+    z-index: 0;
+}
+
+/* Balloons and Ribbons */
+.balloons, .ribbons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.balloons {
+    background: url('https://imgur.com/yCiU5Mx.png') repeat;
+    animation: float 5s infinite;
+}
+
+/* Cake */
+.cake {
+    font-size: 5rem;
+    animation: bounce 2s infinite;
+    margin-top: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes float {
+    0% { background-position-y: 100%; }
+    100% { background-position-y: 0%; }
+}
+
+@keyframes fall {
+    0% { background-position-y: -100%; }
+    100% { background-position-y: 100%; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
