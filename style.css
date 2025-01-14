@@ -32,9 +32,15 @@ body {
     z-index: 1;
 }
 
-#page2, #page3, #page4, #page5, #page6, #page7 {
+#page2, #page4, #page5, #page6, #page7 {
     background-color: #ffc0cb; /* Light pink */
     color: black;
+}
+
+/* Page 3 Background Image */
+#page3 {
+    background: url('https://raw.githubusercontent.com/nishipexel/birthday-surprise/refs/heads/main/images/WhatsApp%20Image%202025-01-14%20at%2022.52.43_2a929580.jpg') center/cover no-repeat;
+    color: white; /* Ensures text is visible against the background */
 }
 
 /* Active Page */
